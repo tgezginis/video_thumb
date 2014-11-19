@@ -32,9 +32,13 @@ or install the gem on terminal.
 
 **size**
 > **default**  *= large*
+>
 > **small**  *(Youtube: 120x90, Vimeo: 100x75)*
+>
 > **medium**  *(Youtube: 320x180, Vimeo: 200x150)*
+>
 > **large**  *(Youtube: 640x480, Vimeo: 640xauto)*
+>
 > **max**  *(Youtube: original, Vimeo: 640xauto)*
 
 
