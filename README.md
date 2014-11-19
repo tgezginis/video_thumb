@@ -68,8 +68,8 @@ VideoThumb::get("http://www.youtube.com/watch?v=iEPTlhBmwRg", "medium")
  - json
 
 
-## Contributing
 <a name="contributing"></a>
+## Contributing
 1. Fork it ( https://github.com/tgezginis/video_thumb/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
