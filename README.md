@@ -1,4 +1,5 @@
 # Youtube and Vimeo thumbnails
+[![Gem Version](https://badge.fury.io/rb/video_thumb.svg)](http://badge.fury.io/rb/video_thumb)
 
 Get the thumbnails from Youtube and Vimeo videos for Ruby.
 
