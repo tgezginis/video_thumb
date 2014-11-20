@@ -1,7 +1,7 @@
-# Youtube and Vimeo thumbnails
+# Youtube, Vimeo and İzlesene thumbnails
 [![Gem Version](https://badge.fury.io/rb/video_thumb.svg)](http://badge.fury.io/rb/video_thumb)
 
-Get the thumbnails from Youtube and Vimeo videos for Ruby.
+Get the thumbnails from Youtube, Vimeo and İzlesene videos for Ruby.
 
 And it may support more video hoster with your [contributions](#contributing).
 
@@ -26,11 +26,18 @@ or install the gem on terminal.
 **url**
 
 > Youtube or Vimeo video link
+>
 > http://www.youtube.com/watch?v=iEPTlhBmwRg
+>
 > or
+>
 > http://vimeo.com/101419884
+>
+> or
+>
+> http://www.izlesene.com/video/feder-goodbye-feat-lyse/7886121
 
-**size**
+**size** (not compatible with izlesene)
 > **default**  *= large*
 >
 > **small**  *(Youtube: 120x90, Vimeo: 100x75)*
@@ -46,7 +53,7 @@ or install the gem on terminal.
 ## Usage
 
 ```ruby
-require 'video_thumb'
+require 'video_thumb' # if you're not use Rails 4
 VideoThumb::get("http://vimeo.com/101419884")
 # returns large thumbnail from Vimeo video
 # http://i.vimeocdn.com/video/483188148_640.jpg
@@ -54,23 +61,16 @@ VideoThumb::get("http://vimeo.com/101419884")
 VideoThumb::get("http://www.youtube.com/watch?v=iEPTlhBmwRg", "medium")
 # returns medium thumbnail from Youtube video
 # https://img.youtube.com/vi/iEPTlhBmwRg/mqdefault.jpg
-```
 
-
-**Rails 4**
-```ruby
-VideoThumb::get("http://vimeo.com/101419884")
+VideoThumb::get("http://www.izlesene.com/video/feder-goodbye-feat-lyse/7886121")
 # returns large thumbnail from Vimeo video
-# http://i.vimeocdn.com/video/483188148_640.jpg
-
-VideoThumb::get("http://www.youtube.com/watch?v=iEPTlhBmwRg", "medium")
-# returns medium thumbnail from Youtube video
-# https://img.youtube.com/vi/iEPTlhBmwRg/mqdefault.jpg
+# http://i2.imgiz.com/rshots/7886/feder-goodbye-feat-lyse_7886121-8807_1200x630.jpg
 ```
 
 ## Dependencies
  - open-uri
  - json
+ - nokogiri
 
 
 <a name="contributing"></a>

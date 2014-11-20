@@ -1,5 +1,6 @@
 require 'video_thumb/version'
 
+require 'nokogiri'
 require 'open-uri'
 require 'json'
 
@@ -44,15 +45,20 @@ module VideoThumb
         return image
       end
     elsif url.include? 'vimeo'
-      regex = /^http:\/\/(?:.*?)\.?(vimeo)\.com\/(watch\?[^#]*v=(\w+)|(\d+)).*$/
+      regex = /^http:\/\/(?:.*?)\.?(vimeo)\.com\/(\d+).*$/
       url.gsub(regex) do
         vimeo_video_id = $2
         vimeo_video_json_url = 'http://vimeo.com/api/v2/video/%s.json' % vimeo_video_id
         image = JSON.parse(open(vimeo_video_json_url).read).first[vimeo_size] rescue nil
         return image
       end
+    elsif url.include? 'izlesene'
+      image = Nokogiri::HTML(open(url)).css("meta[property='og:image']").at_css('meta[property="og:image"]')['content']
+      return image
     else
       return false
     end
+    # http://www.youtube.com/watch?v=tjExIGFO6Zo
+    # http://www.izlesene.com/video/iyi-gelecek/7842972
   end
 end

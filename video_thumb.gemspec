@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = VideoThumb::VERSION
   spec.authors       = ["Tolga Gezginiş"]
   spec.email         = ["tolga@gezginis.com"]
-  spec.summary       = %q{Youtube and Vimeo thumbnails}
-  spec.description   = %q{Get the thumbnails from Youtube and Vimeo videos}
+  spec.summary       = %q{Youtube, Vimeo and İzlesene thumbnails}
+  spec.description   = %q{Get the thumbnails from Youtube, Vimeo and İzlesene videos}
   spec.homepage      = "https://github.com/tgezginis/video_thumb"
   spec.license       = "MIT"
 
@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "json"
+  spec.add_runtime_dependency "nokogiri"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest"
