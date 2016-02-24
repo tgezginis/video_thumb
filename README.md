@@ -80,3 +80,6 @@ VideoThumb::get("http://www.izlesene.com/video/feder-goodbye-feat-lyse/7886121")
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+**Thanks**
+[deegz](https://github.com/deegz)

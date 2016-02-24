@@ -20,16 +20,17 @@ module VideoThumb
     #   thumbnail_medium: 200x150
     #   thumbnail_large: 640xauto
 
-    if size == "small"
+    case size
+    when "small"
       youtube_size  = 'default'
       vimeo_size    = 'thumbnail_small'
-    elsif size == "medium"
+    when "medium"
       youtube_size  = 'mqdefault'
       vimeo_size    = 'thumbnail_medium'
-    elsif size == "large"
+    when "large"
       youtube_size  = 'sddefault'
       vimeo_size    = 'thumbnail_large'
-    elsif size == "max"
+    when "max"
       youtube_size  = 'maxresdefault'
       vimeo_size    = 'thumbnail_large'
     else
@@ -58,7 +59,5 @@ module VideoThumb
     else
       return false
     end
-    # http://www.youtube.com/watch?v=tjExIGFO6Zo
-    # http://www.izlesene.com/video/iyi-gelecek/7842972
   end
 end
