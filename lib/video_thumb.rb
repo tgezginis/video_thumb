@@ -45,7 +45,7 @@ module VideoThumb
         return image
       end
     elsif url.include? 'vimeo'
-      regex = /^http:\/\/(?:.*?)\.?(vimeo)\.com\/(\d+).*$/
+      regex = /^https?:\/\/(?:.*?)\.?(vimeo)\.com\/(\d+).*$/
       url.gsub(regex) do
         vimeo_video_id = $2
         vimeo_video_json_url = 'http://vimeo.com/api/v2/video/%s.json' % vimeo_video_id
