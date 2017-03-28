@@ -38,7 +38,7 @@ module VideoThumb
       vimeo_size    = 'thumbnail_large'
     end
 
-    if url.include? 'youtube'
+    if url.include? 'youtu.be' || url.include? 'youtube'
       regex = /(https?:\/\/)?(www.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/watch\?feature=player_embedded&v=)([A-Za-z0-9_-]*)(\&\S+)?(\?\S+)?/
       url.gsub(regex) do
         youtube_video_id = $4
