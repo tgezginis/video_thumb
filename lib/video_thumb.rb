@@ -38,14 +38,14 @@ module VideoThumb
       vimeo_size    = 'thumbnail_large'
     end
 
-    if url.include? 'youtu.be' || url.include? 'youtube'
+    if url.include?('youtu.be') || url.include?('youtube')
       regex = /(https?:\/\/)?(www.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/watch\?feature=player_embedded&v=)([A-Za-z0-9_-]*)(\&\S+)?(\?\S+)?/
       url.gsub(regex) do
         youtube_video_id = $4
         image = "https://img.youtube.com/vi/#{youtube_video_id}/#{youtube_size}.jpg"
         return image
       end
-    elsif url.include? 'vimeo'
+    elsif url.include?('vimeo')
       regex = /^https?:\/\/(?:.*?)\.?(vimeo)\.com\/(\d+).*$/
       url.gsub(regex) do
         vimeo_video_id = $2
@@ -53,7 +53,7 @@ module VideoThumb
         image = JSON.parse(open(vimeo_video_json_url).read).first[vimeo_size] rescue nil
         return image
       end
-    elsif url.include? 'izlesene'
+    elsif url.include?('izlesene')
       image = Nokogiri::HTML(open(url)).css("meta[property='og:image']").at_css('meta[property="og:image"]')['content']
       return image
     else
