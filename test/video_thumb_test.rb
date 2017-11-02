@@ -11,4 +11,7 @@ class VideoThumbTest < Minitest::Test
   def test_secure_vimeo_video
     assert_equal "http://i.vimeocdn.com/video/483188148_640.jpg", VideoThumb::get("https://vimeo.com/101419884")
   end
+  def test_reversed_url_params
+    assert_equal "https://img.youtube.com/vi/9BOuRUlRKzA/sddefault.jpg", VideoThumb::get("https://www.youtube.com/watch?time_continue=3&v=9BOuRUlRKzA")
+  end
 end
