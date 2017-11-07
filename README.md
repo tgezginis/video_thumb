@@ -82,4 +82,4 @@ VideoThumb::get("http://www.izlesene.com/video/feder-goodbye-feat-lyse/7886121")
 5. Create a new Pull Request
 
 **Thanks**
-[deegz](https://github.com/deegz) - [akosipc](https://github.com/akosipc)
+[deegz](https://github.com/deegz) - [akosipc](https://github.com/akosipc) - [adzierzanowski](https://github.com/adzierzanowski)
