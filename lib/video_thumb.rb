@@ -55,7 +55,7 @@ module VideoThumb
           vimeo_video_id = Regexp.last_match(2)
           vimeo_video_json_url = format('http://vimeo.com/api/v2/video/%s.json', vimeo_video_id)
           image = begin
-                    JSON.parse(open(vimeo_video_json_url).read).first[vimeo_size]
+                    JSON.parse(URI.open(vimeo_video_json_url).read).first[vimeo_size]
                   rescue StandardError
                     nil
                   end
