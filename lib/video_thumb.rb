@@ -53,7 +53,7 @@ module VideoThumb
         url = get_redirect_url(url) unless regex.match?(url)
         url.gsub(regex) do
           vimeo_video_id = Regexp.last_match(2)
-          vimeo_video_json_url = format('http://vimeo.com/api/v2/video/%s.json', vimeo_video_id)
+          vimeo_video_json_url = format('https://vimeo.com/api/v2/video/%s.json', vimeo_video_id)
           image = begin
                     JSON.parse(URI.open(vimeo_video_json_url).read).first[vimeo_size]
                   rescue StandardError
