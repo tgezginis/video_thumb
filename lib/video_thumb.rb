@@ -62,7 +62,7 @@ module VideoThumb
           return image
         end
       elsif url.include?('izlesene')
-        image = Nokogiri::HTML(open(url)).css("meta[property='og:image']").at_css('meta[property="og:image"]')['content']
+        image = Nokogiri::HTML(URI.open(url)).css("meta[property='og:image']").at_css('meta[property="og:image"]')['content']
         return image
       else
         return false
