@@ -56,7 +56,7 @@ module VideoThumb
           vimeo_video_json_url = format('http://vimeo.com/api/v2/video/%s.json', vimeo_video_id)
           image = begin
                     JSON.parse(URI.open(vimeo_video_json_url).read).first[vimeo_size]
-                  rescue StandardError
+                  rescue OpenURI::HTTPError
                     nil
                   end
           return image
